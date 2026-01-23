@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pamela Jo Lee — CV, Interests & Publications</title>
+<meta name="description" content="Pamela Jo Lee — professional portfolio: CV, interests, publications, and contact." />
+<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+<!-- JSON-LD for Person (helps SEO) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Pamela Jo Lee",
+  "url":"https://pamelajolee.github.io",
+  "sameAs":["https://www.linkedin.com/in/pamelajolee/","https://github.com/YOUR_GITHUB_USERNAME"]
+}
+</script>
+
+<style>
+  /* ---------- Ocean current animated background ---------- */
+  :root{
+    --bg1:#021526;
+    --bg2:#053e5c;
+    --accent:#7bdff6;
+    --muted:#b6ced9;
+    --card-bg: rgba(255,255,255,0.03);
+    --radius:14px;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    color:#e9f6fb; background:linear-gradient(180deg,var(--bg1) 0%, #022a3c 60%);
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* animated ocean current canvas sits behind content */
+  #ocean{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+  }
+  .container{
+    position:relative; z-index:2; max-width:var(--maxw); margin:40px auto; padding:28px;
+  }
+
+  header{display:flex; gap:16px; align-items:center; margin-bottom:18px}
+  .avatar{
+    width:84px; height:84px; border-radius:12px; display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--accent),#60a5fa); color:#052433; font-weight:700; font-size:20px;
+    box-shadow:0 6px 20px rgba(2,6,23,0.6);
+  }
+  h1{margin:0; font-size:26px}
+  .subtitle{color:var(--muted); margin-top:6px; font-size:14px}
+
+  /* layout */
+  .card{background:var(--card-bg); padding:18px; border-radius:var(--radius); box-shadow: 0 8px 30px rgba(2,6,23,0.6); margin-bottom:18px}
+  .top-row{display:flex; gap:18px; align-items:center; justify-content:space-between}
+  .tabs{display:flex; gap:8px; margin-top:10px}
+  .tab{padding:10px 14px; border-radius:10px; background:transparent; color:var(--muted); cursor:pointer; border:1px solid rgba(255,255,255,0.02)}
+  .tab.active{color:#042022; background:var(--accent); font-weight:600}
+  .grid{display:grid; grid-template-columns:1fr 340px; gap:22px; align-items:start; margin-top:18px}
+  @media (max-width:900px){ .grid{grid-template-columns:1fr} .sidebar{order:-1} }
+
+  /* content */
+  h2{margin:0 0 8px 0; font-size:18px}
+  .muted{color:var(--muted); font-size:14px}
+  .btn{display:inline-block;padding:9px 14px;border-radius:10px;background:rgba(123,223,246,0.12);border:1px solid rgba(123,223,246,0.12);color:var(--accent);text-decoration:none;font-weight:600}
+
+  /* publications list */
+  ul.pub{padding-left:16px;margin:8px 0 0 0}
+  li.pub{margin-bottom:10px;color:#e8fbff}
+
+  footer{color:var(--muted); font-size:13px; margin-top:20px; text-align:center}
+
+  /* small responsive tweaks */
+  .contact a{color:var(--accent); text-decoration:none}
+  .cv-embed{width:100%;height:420px;border-radius:10px;border:1px solid rgba(255,255,255,0.03); overflow:hidden}
+</style>
+</head>
+<body>
+  <!-- canvas for animated ocean currents -->
+  <canvas id="ocean" aria-hidden="true"></canvas>
+
+  <div class="container">
+    <header>
+      <div class="avatar">PJ</div>
+      <div>
+        <h1>Pamela Jo Lee</h1>
+        <div class="subtitle"><!-- PASTE: Job title & location from LinkedIn -->Your current job title • City, Country</div>
+        <div class="muted" style="margin-top:8px">LinkedIn: <a class="muted" target="_blank" href="https://www.linkedin.com/in/pamelajolee/">linkedin.com/in/pamelajolee</a></div>
+      </div>
+      <div style="margin-left:auto" class="muted">Open to: <!-- PASTE: short availability text from LinkedIn --> consulting, roles, collaborations</div>
+    </header>
+
+    <div class="card top-row">
+      <div>
+        <div style="font-size:15px; font-weight:700">Professional summary</div>
+        <p class="muted" id="summary">
+          <!-- PASTE: Replace this paragraph with your LinkedIn Summary / About (2-4 short sentences) -->
+          Professional summary — paste your LinkedIn About / Summary here.
+        </p>
+      </div>
+
+      <div style="text-align:right">
+        <a class="btn" href="cv.pdf" download id="download-cv">Download CV (PDF)</a>
+        <div style="height:8px"></div>
+        <a class="btn" href="mailto:you@example.com" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">Email</a>
+      </div>
+    </div>
+
+    <!-- tabs -->
+    <div class="card">
+      <div class="tabs" role="tablist" aria-label="Main sections">
+        <button class="tab active" data-tab="interests" role="tab" aria-selected="true">Interests</button>
+        <button class="tab" data-tab="cv" role="tab">CV</button>
+        <button class="tab" data-tab="publications" role="tab">Publications</button>
+      </div>
+
+      <div class="grid">
+        <!-- main column -->
+        <main>
+          <!-- Interests -->
+          <section id="interests" class="section">
+            <h2>Interests & Research</h2>
+            <p class="muted"><!-- PASTE: Short bullets from LinkedIn 'Interests' or 'Skills' -->List your primary interests / domains below.</p>
+            <ul>
+              <li class="muted">Interest 1 — short supporting detail</li>
+              <li class="muted">Interest 2 — short supporting detail</li>
+              <li class="muted">Interest 3 — short supporting detail</li>
+            </ul>
+          </section>
+
+          <!-- CV -->
+          <section id="cv" class="section" style="display:none;">
+            <h2>Curriculum Vitae</h2>
+            <p class="muted">Below is an embedded preview (if your browser supports PDF in an iframe). You can download the full CV using the 'Download CV' button above.</p>
+            <div class="cv-embed">
+              <!-- If you upload cv.pdf to the repo root, this iframe should show it -->
+              <iframe src="cv.pdf" style="width:100%;height:100%;border:0" title="CV (PDF)"></iframe>
+            </div>
+
+            <h3 style="margin-top:14px">Experience</h3>
+            <p class="muted"><strong><!-- PASTE: Current Role Title --></strong><br>
+               <!-- PASTE: Company • Dates • 1-line role summary from LinkedIn --> </p>
+
+            <h3>Education</h3>
+            <p class="muted"><strong><!-- PASTE: Highest degree & institution --></strong><br>
+               <!-- PASTE: Year, short notes --></p>
+
+            <h3>References</h3>
+            <p class="muted">Available on request. To list referees on the site, paste name, title, organisation, and contact here.</p>
+          </section>
+
+          <!-- Publications -->
+          <section id="publications" class="section" style="display:none;">
+            <h2>Selected Publications</h2>
+            <p class="muted">Below are sample entries — replace these with your publications (authors, year, title, venue, DOI/URL).</p>
+            <ul class="pub">
+              <!-- Replace or duplicate list items with your publications -->
+              <li class="pub"><strong>Author, A.</strong> (2024). Title of paper. <em>Journal Name</em>. <a href="#" class="muted" style="color:var(--accent)">PDF / DOI</a></li>
+              <li class="pub"><strong>Author, A.</strong> (2023). Conference paper title. <em>Conference</em>. <a href="#" class="muted" style="color:var(--accent)">Slides</a></li>
+            </ul>
+          </section>
+        </main>
+
+        <!-- sidebar -->
+        <aside class="sidebar">
+          <div class="card">
+            <h3 style="margin-top:0">Contact & Links</h3>
+            <p class="muted">
+              Email: <a class="contact" href="mailto:you@example.com">you@example.com</a><br>
+              LinkedIn: <a href="https://www.linkedin.com/in/pamelajolee/" target="_blank">linkedin.com/in/pamelajolee</a><br>
+              GitHub: <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">github.com/YOUR_GITHUB_USERNAME</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0">Quick facts</h3>
+            <p class="muted"><strong>Location:</strong> City, Country</p>
+            <p class="muted"><strong>Availability:</strong> Open to opportunities / consulting</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Pamela Jo Lee — Built with GitHub Pages • <a class="muted" href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io" target="_blank">Source</a></div>
+    </footer>
+  </div>
+
+<script>
+  // small helper: current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // tabs
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    const name = t.dataset.tab;
+    ['interests','cv','publications'].forEach(id=>{
+      document.getElementById(id).style.display = (id===name)?'block':'none';
+    });
+    // focus first heading for accessibility
+    const h = document.getElementById(name).querySelector('h2');
+    if(h) h.focus();
+  }));
+
+  // Ocean current animation: lightweight procedural flow field
+  (function oceanCanvas(){
+    const canvas = document.getElementById('ocean');
+    const ctx = canvas.getContext('2d');
+    let w, h, t=0;
+    function resize(){ w=canvas.width=innerWidth; h=canvas.height=innerHeight; }
+    addEventListener('resize', resize); resize();
+
+    // helper noise (simple pseudo-noise)
+    function noise(x,y){
+      return Math.sin(x*0.02 + Math.cos(y*0.017 + t*0.0009))*0.5 + Math.cos(y*0.013 + Math.sin(x*0.01 + t*0.0007))*0.5;
+    }
+
+    function draw(){
+      t++;
+      ctx.clearRect(0,0,w,h);
+      // layered translucent gradients for depth
+      for(let layer=0; layer<5; layer++){
+        ctx.beginPath();
+        const hue = 190 - layer*10;
+        for(let x=0; x<w; x+=8){
+          const y = h*0.5 + Math.sin((x*0.006) + t*0.003 + layer)*40*(0.8+layer*0.2) + noise(x,layer*100)*60;
+          if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }
+        ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath();
+        ctx.fillStyle = `hsla(${hue},60%,${10+layer*6}%,${0.12 - layer*0.02})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+</script>
+</body>
+</html>
