@@ -51,7 +51,12 @@
   .tab{ padding:10px 14px; border-radius:10px; background:transparent; color:var(--muted); cursor:pointer; border:1px solid rgba(255,255,255,0.02); }
   .tab.active{ color:#042022; background:var(--accent); font-weight:600; }
   .grid{ display:grid; grid-template-columns:1fr 360px; gap:24px; align-items:start; margin-top:18px; }
-  @media (max-width:1000px){ .grid{ grid-template-columns:1fr } .sidebar{ order:-1 } }
+  @media (max-width:1000px){ 
+    .grid{ grid-template-columns:1fr } 
+    /* ensure main content (tabs) appears BEFORE the sidebar on small screens */
+    main{ order: 1; }
+    .sidebar{ order: 2; }
+  }
 
   /* content */
   h2{ margin:0 0 8px 0; font-size:20px; }
@@ -80,6 +85,17 @@
   /* small helpers */
   figure img{ display:block; max-width:100%; }
   figcaption{ color:var(--muted); font-size:13px; margin-top:6px; }
+
+  /* MOBILE TWEAKS */
+  @media (max-width:680px){
+    .about-top{ flex-direction:column; align-items:center; text-align:center; }
+    .about-img{ width:184px; height:184px; }
+    .lead{ max-width:100%; }
+    .tabs{ justify-content:flex-start; gap:6px; }
+    .tab{ padding:8px 10px; font-size:14px; }
+    .cv-embed{ height:520px; } /* smaller for phones */
+    .container{ padding:18px; margin:18px auto; }
+  }
 </style>
 </head>
 <body>
@@ -110,7 +126,7 @@
           <section id="about" class="section">
             <div class="about-top">
               <div class="about-img" aria-hidden="true">
-                <!-- uses your uploaded headshot 3990.png -->
+                <!-- uses your uploaded headshot 3990.jpeg -->
                 <img src="3990.jpeg" alt="Pamela Jo Lee — headshot">
               </div>
               <div>
@@ -147,7 +163,7 @@
             <h2>Curriculum Vitae</h2>
             <p class="muted">Preview of my CV — download or open in a new tab to see the full document.</p>
             <div class="cv-embed" style="margin-top:12px;">
-              <!-- Replace 'cv.pdf' with the exact filename of your uploaded CV if necessary -->
+              <!-- Replace with your exact CV filename if different -->
               <iframe src="CV_Lee_Pamela_4Dec2025.pdf" style="width:100%;height:100%;border:0" title="CV (PDF)"></iframe>
             </div>
           </section>
