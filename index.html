@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Pamela Jo Lee — CV, Interests & Publications</title>
-<meta name="description" content="Pamela Jo Lee — professional portfolio: CV, interests, publications, and contact." />
+<title>Pamela Jo Lee — Portfolio</title>
+<meta name="description" content="Pamela Jo Lee — CV, research interests, publications, and contact." />
 <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 <script type="application/ld+json">
 {
@@ -19,92 +19,86 @@
 <style>
   :root{
     --bg1:#021526;
-    --bg2:#053e5c;
+    --bg2:#012b3f;
     --accent:#7bdff6;
     --muted:#b6ced9;
     --card-bg: rgba(255,255,255,0.03);
     --radius:14px;
-    --maxw:1100px;
+    --maxw:1300px;        /* widened layout */
+    --link:#ffd166;       /* visible link color */
   }
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
     margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-    color:#e9f6fb; background:linear-gradient(180deg,var(--bg1) 0%, #022a3c 60%);
+    color:#e9f6fb; background:linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 70%);
     -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
   }
 
-  /* animated ocean current canvas sits behind content */
-  #ocean{
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-  }
-  .container{
-    position:relative; z-index:2; max-width:var(--maxw); margin:40px auto; padding:28px;
-  }
+  /* ocean canvas sits behind content */
+  #ocean{ position:fixed; inset:0; z-index:0; pointer-events:none; }
 
-  header{display:flex; gap:16px; align-items:center; margin-bottom:18px}
-  .avatar{
-    width:84px; height:84px; border-radius:12px; display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(135deg,var(--accent),#60a5fa); color:#052433; font-weight:700; font-size:20px;
-    box-shadow:0 6px 20px rgba(2,6,23,0.6); overflow:hidden;
-  }
-  .avatar img{width:84px;height:84px;object-fit:cover;display:block;border-radius:12px}
-  h1{margin:0; font-size:26px}
-  .subtitle{color:var(--muted); margin-top:6px; font-size:14px}
+  .container{ position:relative; z-index:2; max-width:var(--maxw); margin:36px auto; padding:28px; }
+
+  /* header: only name + title */
+  header{ display:flex; gap:16px; align-items:center; margin-bottom:18px; justify-content:space-between; }
+  h1{ margin:0; font-size:30px; letter-spacing:0.2px; }
+  .title{ color:var(--muted); margin-top:4px; font-size:15px; }
 
   /* layout */
-  .card{background:var(--card-bg); padding:18px; border-radius:var(--radius); box-shadow: 0 8px 30px rgba(2,6,23,0.6); margin-bottom:18px}
-  .top-row{display:flex; gap:18px; align-items:center; justify-content:space-between}
-  .tabs{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
-  .tab{padding:10px 14px; border-radius:10px; background:transparent; color:var(--muted); cursor:pointer; border:1px solid rgba(255,255,255,0.02)}
-  .tab.active{color:#042022; background:var(--accent); font-weight:600}
-  .grid{display:grid; grid-template-columns:1fr 340px; gap:22px; align-items:start; margin-top:18px}
-  @media (max-width:900px){ .grid{grid-template-columns:1fr} .sidebar{order:-1} }
+  .card{ background:var(--card-bg); padding:18px; border-radius:var(--radius); box-shadow: 0 10px 30px rgba(2,6,23,0.6); margin-bottom:18px; }
+  .tabs{ display:flex; gap:8px; margin-top:6px; flex-wrap:wrap; }
+  .tab{ padding:10px 14px; border-radius:10px; background:transparent; color:var(--muted); cursor:pointer; border:1px solid rgba(255,255,255,0.02); }
+  .tab.active{ color:#042022; background:var(--accent); font-weight:600; }
+  .grid{ display:grid; grid-template-columns:1fr 360px; gap:24px; align-items:start; margin-top:18px; }
+  @media (max-width:1000px){ .grid{ grid-template-columns:1fr } .sidebar{ order:-1 } }
 
   /* content */
-  h2{margin:0 0 8px 0; font-size:18px}
-  .muted{color:var(--muted); font-size:14px}
-  .btn{display:inline-block;padding:9px 14px;border-radius:10px;background:rgba(123,223,246,0.12);border:1px solid rgba(123,223,246,0.12);color:var(--accent);text-decoration:none;font-weight:600}
+  h2{ margin:0 0 8px 0; font-size:20px; }
+  .muted{ color:var(--muted); font-size:15px; line-height:1.5; }
+  .lead{ color:#eaf9ff; font-size:16px; line-height:1.6; max-width:78ch; }
 
-  /* publications list */
-  ul.pub{padding-left:16px;margin:8px 0 0 0}
-  li.pub{margin-bottom:10px;color:#e8fbff}
+  /* links */
+  a { color:var(--link); text-decoration:none; }
+  a:hover { text-decoration:underline; }
 
-  footer{color:var(--muted); font-size:13px; margin-top:20px; text-align:center}
+  /* About page headshot layout */
+  .about-top{ display:flex; gap:20px; align-items:center; }
+  .about-img{ width:260px; height:260px; border-radius:12px; overflow:hidden; flex-shrink:0; box-shadow:0 8px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); }
+  .about-img img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-  /* small responsive tweaks */
-  .contact a{color:var(--accent); text-decoration:none}
-  .cv-embed{width:100%;height:420px;border-radius:10px;border:1px solid rgba(255,255,255,0.03); overflow:hidden}
-  figure img{display:block}
-  figcaption a{color:var(--accent)}
+  /* CV embed larger */
+  .cv-embed{ width:100%; height:760px; border-radius:10px; border:1px solid rgba(255,255,255,0.03); overflow:hidden; }
+
+  ul.pub{ padding-left:16px; margin:8px 0 0 0; }
+  li.pub{ margin-bottom:12px; color:#e8fbff; }
+
+  footer{ color:var(--muted); font-size:13px; margin-top:20px; text-align:center; }
+
+  .contact a{ color:var(--link); }
+
+  /* small helpers */
+  figure img{ display:block; max-width:100%; }
+  figcaption{ color:var(--muted); font-size:13px; margin-top:6px; }
 </style>
 </head>
 <body>
-  <!-- canvas for animated ocean currents -->
   <canvas id="ocean" aria-hidden="true"></canvas>
 
   <div class="container">
     <header>
-      <!-- Replace 'headshot.jpg' with your actual file name if different -->
-      <div class="avatar">
-        <img src="3990.jpg" alt="Pamela Jo Lee — headshot">
-      </div>
-
-      <div style="flex:1">
+      <div>
         <h1>Pamela Jo Lee</h1>
-        <div class="subtitle">Graduate Researcher • Columbia, SC</div>
-        <p class="muted" style="margin:10px 0 0 0; max-width:74ch;">
-          I am a second-year Marine Science Master’s student at the University of South Carolina in Dr. Subra Bulusu’s Satellite Oceanography Lab, where I study freshwater, mesoscale, and submesoscale dynamics in the Gulf of Mexico. I earned my Bachelor’s degree in Atmospheric and Oceanic Sciences from UCLA (2023). My work combines satellite remote sensing, altimetry, and river records to quantify sea-surface-salinity variability and the influence of river discharge and the Loop Current.
-        </p>
+        <div class="title">Graduate Researcher • Columbia, SC</div>
       </div>
-
-      <!-- Upper-right simplified intentionally removed per your request -->
+      <!-- intentionally empty right side to keep header minimal -->
+      <div aria-hidden="true"></div>
     </header>
 
-    <!-- tabs + content card -->
     <div class="card">
       <div class="tabs" role="tablist" aria-label="Main sections">
-        <button class="tab active" data-tab="interests" role="tab" aria-selected="true">Research Interests</button>
+        <button class="tab active" data-tab="about" role="tab" aria-selected="true">About Me</button>
+        <button class="tab" data-tab="interests" role="tab">Research Interests</button>
         <button class="tab" data-tab="cv" role="tab">CV</button>
         <button class="tab" data-tab="publications" role="tab">Publications</button>
       </div>
@@ -112,20 +106,37 @@
       <div class="grid">
         <!-- main column -->
         <main>
-          <!-- Interests -->
-          <section id="interests" class="section">
-            <h2>Interests & Research</h2>
+          <!-- ABOUT (default visible) -->
+          <section id="about" class="section">
+            <div class="about-top">
+              <div class="about-img" aria-hidden="true">
+                <!-- uses your uploaded headshot 3990.png -->
+                <img src="3990.png" alt="Pamela Jo Lee — headshot">
+              </div>
+              <div>
+                <h2 style="margin-top:0">About Me</h2>
+                <p class="lead">
+                  I am a second-year Marine Science Master’s student at the University of South Carolina in Dr. Subra Bulusu’s Satellite Oceanography Lab, where I study freshwater, mesoscale, and submesoscale dynamics in the Gulf of Mexico. My work combines satellite remote sensing, altimetry, and river gauge records to quantify sea-surface-salinity variability and the influence of river discharge and the Loop Current.
+                </p>
+                <p class="muted" style="margin-top:10px">
+                  Bachelor's: Atmospheric & Oceanic Sciences, UCLA (2023). Nontraditional student pathway: community college transfer. Awards include Outstanding Research (USC) and Best Graduate Poster (Discover USC, 2025).
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- RESEARCH INTERESTS -->
+          <section id="interests" class="section" style="display:none;">
+            <h2>Research Interests</h2>
             <p class="muted">
-              My research focuses on satellite-observed surface salinity and its coupling with coastal river discharge
-              and the Loop Current System in the Gulf of Mexico. I quantify how river discharge and Loop Current evolution
-              together control basin-wide sea-surface-salinity (SSS) patterns during flood and drought years (Lee et al., 2025).
+              My research focuses on satellite-observed surface salinity and its coupling with coastal river discharge and the Loop Current System in the Gulf of Mexico. I quantify how river discharge and Loop Current evolution together control basin-wide sea-surface-salinity (SSS) patterns during flood and drought years (Lee et al., 2025).
               <a href="https://doi.org/10.1029/2024GL114409" target="_blank" rel="noopener">DOI:10.1029/2024GL114409</a>
             </p>
 
             <figure style="margin-top:12px;">
               <!-- assumes you uploaded 'figure4.png' to repo root -->
-              <img src="figure4.png" alt="Lee et al. (2025) Figure 4 — spatial maps showing sea-surface-salinity diagnostics" style="max-width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.03)">
-              <figcaption class="muted" style="font-size:13px;margin-top:6px">
+              <img src="figure4.png" alt="Lee et al. (2025) Figure 4 — spatial maps showing sea-surface-salinity diagnostics" style="border-radius:8px;border:1px solid rgba(255,255,255,0.03)">
+              <figcaption>
                 Figure: From Lee et al. (2025), <em>Geophys. Res. Lett.</em> — spatial diagnostics of surface salinity and advective freshwater fluxes used to quantify river discharge and Loop Current impacts. Reproduced under CC-BY 4.0. DOI: <a href="https://doi.org/10.1029/2024GL114409" target="_blank" rel="noopener">10.1029/2024GL114409</a>
               </figcaption>
             </figure>
@@ -134,17 +145,17 @@
           <!-- CV -->
           <section id="cv" class="section" style="display:none;">
             <h2>Curriculum Vitae</h2>
-            <p class="muted">Preview of my CV — use the Download/Save option in your browser to get the full PDF.</p>
-            <div class="cv-embed" style="margin-top:10px;">
-              <!-- Put your CV file as 'cv.pdf' in the repo root; change filename here if different -->
-              <iframe src="CV_Lee_Pamela_4Dec2025.pdf" style="width:100%;height:100%;border:0" title="CV (PDF)"></iframe>
+            <p class="muted">Preview of my CV — download or open in a new tab to see the full document.</p>
+            <div class="cv-embed" style="margin-top:12px;">
+              <!-- Replace 'cv.pdf' with the exact filename of your uploaded CV if necessary -->
+              <iframe src="cv.pdf" style="width:100%;height:100%;border:0" title="CV (PDF)"></iframe>
             </div>
           </section>
 
           <!-- Publications -->
           <section id="publications" class="section" style="display:none;">
             <h2>Publications, Conferences & Talks</h2>
-            <p class="muted">Selected work and relevant presentations.</p>
+            <p class="muted">Selected work and presentations.</p>
 
             <ul class="pub" style="margin-top:10px;">
               <li class="pub">
@@ -154,17 +165,16 @@
               </li>
 
               <li class="pub">
-                National Academies — Workshop event page: 
+                National Academies — Workshop event page:
                 <a href="https://www.nationalacademies.org/projects/GULF-GEPS-23-P-583/event/45147" target="_blank" rel="noopener">GULF-GEPS event</a>
               </li>
 
               <li class="pub">
-                AGU 2025 iPoster: 
+                AGU 2025 iPoster:
                 <a href="https://agu25.ipostersessions.com/?s=DB-BB-D7-4D-76-70-FA-DC-87-15-06-57-86-A1-64-45" target="_blank" rel="noopener">iPoster presentation</a>
               </li>
             </ul>
           </section>
-
         </main>
 
         <!-- sidebar -->
@@ -199,23 +209,25 @@
   </div>
 
 <script>
-  // small helper: current year
+  // set year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // tabs
+  // tabs behavior
   const tabs = document.querySelectorAll('.tab');
   tabs.forEach(t => t.addEventListener('click', () => {
     tabs.forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
     const name = t.dataset.tab;
-    ['interests','cv','publications'].forEach(id=>{
+    ['about','interests','cv','publications'].forEach(id=>{
       document.getElementById(id).style.display = (id===name)?'block':'none';
     });
     const h = document.getElementById(name).querySelector('h2');
     if(h) h.focus();
+    // smooth scroll to top of content on tab switch for smaller screens
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }));
 
-  // Ocean current animation: lightweight procedural flow field
+  // ocean current animation
   (function oceanCanvas(){
     const canvas = document.getElementById('ocean');
     const ctx = canvas.getContext('2d');
