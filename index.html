@@ -40,7 +40,7 @@
 
   .container{ position:relative; z-index:2; max-width:var(--maxw); margin:36px auto; padding:28px; }
 
-  /* header: only name + title */
+  /* header: */
   header{ display:flex; gap:16px; align-items:center; margin-bottom:18px; justify-content:space-between; }
   h1{ margin:0; font-size:30px; letter-spacing:0.2px; }
   .title{ color:var(--muted); margin-top:4px; font-size:15px; }
@@ -76,7 +76,8 @@
   .cv-embed{ width:100%; height:760px; border-radius:10px; border:1px solid rgba(255,255,255,0.03); overflow:hidden; }
 
   ul.pub{ padding-left:16px; margin:8px 0 0 0; }
-  li.pub{ margin-bottom:12px; color:#e8fbff; }
+  /* double-space-like visual spacing for publication bullets */
+  li.pub{ margin-bottom:1.2em; line-height:1.5; color:#e8fbff; }
 
   footer{ color:var(--muted); font-size:13px; margin-top:20px; text-align:center; }
 
@@ -123,47 +124,98 @@
         <!-- main column -->
         <main>
           <!-- ABOUT (default visible) -->
-          <section id="about" class="section">
-            <div class="about-top">
-              <div class="about-img" aria-hidden="true">
-                <!-- uses your uploaded headshot 3990.jpeg -->
-                <img src="3990.jpeg" alt="Pamela Jo Lee — headshot">
-              </div>
-              <div>
-                <h2 style="margin-top:0">About Me</h2>
-                <p class="lead">
-                  I am a second-year Marine Science Master’s student at the University of South Carolina in Dr. Subra Bulusu’s Satellite Oceanography Lab, where I study freshwater, mesoscale, and submesoscale dynamics in the Gulf of Mexico. My work combines satellite remote sensing, altimetry, and river gauge records to quantify sea-surface-salinity variability and the influence of river discharge and the Loop Current.
-                </p>
-                <p class="muted" style="margin-top:10px">
-                  Bachelor's: Atmospheric & Oceanic Sciences, UCLA (2023). Nontraditional student pathway: community college transfer. Awards include Outstanding Research (USC) and Best Graduate Poster (Discover USC, 2025).
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- RESEARCH INTERESTS -->
-          <section id="interests" class="section" style="display:none;">
-            <h2>Research Interests</h2>
-            <p class="muted">
-              My research focuses on satellite-observed surface salinity and its coupling with coastal river discharge and the Loop Current System in the Gulf of Mexico. I quantify how river discharge and Loop Current evolution together control basin-wide sea-surface-salinity (SSS) patterns during flood and drought years (Lee et al., 2025).
-              <a href="https://doi.org/10.1029/2024GL114409" target="_blank" rel="noopener">DOI:10.1029/2024GL114409</a>
+      <section id="about" class="section">
+        <div class="about-top">
+          <div class="about-img" aria-hidden="true">
+            <img src="3990.jpeg" alt="Pamela Jo Lee — headshot">
+          </div>
+      
+          <div>
+            <h2 style="margin-top:0">Welcome,</h2>
+            <p class="lead" style="margin-bottom:8px;">
+              I am a recent graduate from the University of South Carolina, where I obtained a Master's in Marine Science with a focus on Satellite Remote Sensing and data-driven analysis of ocean dynamics.
+              As a non-traditional student, I take pride in achieving every milestone of my academic career.
+              My current goal in life is to pursue a career focused on ocean, atmospheric, or climate research.
             </p>
+      
+            <h3 style="margin-top:14px; margin-bottom:6px;">Degrees</h3>
+            <ul class="muted" style="margin-top:0; padding-left:18px;">
+              <li><strong>M.S.</strong> — Satellite &amp; Physical Oceanography, University of South Carolina (expected 2026)</li>
+              <li><strong>B.S.</strong> — Atmospheric &amp; Oceanic Sciences, University of California - Los Angeles (2023)</li>
+              <li><strong>A.S.</strong> — Mathematics &amp; Physical Sciences, Los Angeles Valley College (2017–2021)</li>
+            </ul>
+      
+            <h3 style="margin-top:12px; margin-bottom:6px;">Awards &amp; Honors</h3>
+            <ul class="muted" style="margin-top:0; padding-left:18px;">
+              <li>Best Graduate Poster — Discover USC (2025)</li>
+              <li>Outstanding Research in Marine Science — University of South Carolina (2025)</li>
+              <li>Chi Epsilon Pi Honor Society</li>
+              <li>Transfer Alliance Honors Program (LAVC)</li>
+              <li>Phi Theta Kappa Honor Society</li>
+              <li>Dean's Honor List (Six Semesters &amp; Two Quarters)</li>   
+              <li>President’s Distinguished Honor Award (Fall 2020 &amp; Spring 2021)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-            <figure style="margin-top:12px;">
-              <!-- assumes you uploaded 'figure4.png' to repo root -->
-              <img src="figure4.png" alt="Lee et al. (2025) Figure 4 — spatial maps showing sea-surface-salinity diagnostics" style="border-radius:8px;border:1px solid rgba(255,255,255,0.03)">
-              <figcaption>
-                Figure: From Lee et al. (2025), <em>Geophys. Res. Lett.</em> — spatial diagnostics of surface salinity and advective freshwater fluxes used to quantify river discharge and Loop Current impacts. Reproduced under CC-BY 4.0. DOI: <a href="https://doi.org/10.1029/2024GL114409" target="_blank" rel="noopener">10.1029/2024GL114409</a>
-              </figcaption>
-            </figure>
-          </section>
+   <!-- Research Interests -->
+<section id="interests" class="section" style="display:none;">
+  <h2>Research Interests</h2>
+
+  <p class="muted" style="max-width:78ch;">
+
+    My interests include just about anything that focuses on ocean or atmospheric dynamics — from how freshwater influences surface currents,
+    to large-scale overturning circulation, and climate impacts on extreme events. During my Master's, I focused on two projects using remotely-sensed data
+    to examine circulation and biological surface transport in the Gulf of Mexico.
+  </p>
+
+  <!-- Paper 1:  -->
+  <div style="margin-top:16px">
+    <h3 style="margin:10px 0 6px 0">Surface Salinity Variability in the Gulf of Mexico During Flood and Drought Years (Lee et al., 2025)</h3>
+    <p class="muted" style="margin-bottom:8px; max-width:78ch;">
+      Key focus: How Atchafalaya and Mississippi discharge, plus advective freshwater fluxes (zonal/meridional),
+      redistribute low-salinity water across the surface of the basin and interact with the LCS phase to produce unexpected
+      flood/drought SSS responses.
+    </p>
+
+    <figure style="margin-top:8px;">
+      <img src="figure4.png" alt="Figure 2.4 from thesis — zonal/meridional freshwater fluxes and SSS" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+      <figcaption class="muted" style="font-size:13px; margin-top:6px;">
+        Figure. Monthly time series of zonal freshwater flux spatially averaged over the Mississippi‐Alabama‐Florida (MAFLA) and Florida Straits (FL Straits) regions, 
+        (b) meridional freshwater flux over the West Florida Shelf and Yucatan Channel, 
+        (c) monthly mean sea surface salinity, (d) zonal, and (e) meridional freshwater fluxes for August 2022. Colored boxes in 
+        (d) and (e) correspond to time series in (a) and (b), respectively.
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- Paper 2: -->
+  <div style="margin-top:18px;">
+    <h3 style="margin:10px 0 6px 0">Chlorophyll-a Variability within Loop Current Frontal Eddies in the Gulf of Mexico (Lee et al., Submitted to JGR Oceans, Nov. 2025)</h3>
+    <p class="muted" style="margin-bottom:8px; max-width:78ch;">
+      Key focus: Partitioning the roles of horizontal advection (river-sourced nutrient transport) and vertical
+      entrainment (mixed-layer deepening) in producing elevated surface chlorophyll inside LCFEs. This research
+      demonstrates regional differences across WFCE/CBCE/NCE formation zones and shows how seasonality,
+      LC phase, and river forcing combine to shape Chl-a surface signals.
+    </p>
+
+    <figure style="margin-top:8px;">
+      <img src="Fig7_LCFE_chlor_vs_doy.tiff" alt="Figure 3.5 from thesis — scatter plots of chlorophyll vs day of year" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+      <figcaption class="muted" style="font-size:13px; margin-top:6px;">
+        Figure. Scatter plots for chlorophyll vs. the day of the year, for the mean of all LCFEs (A), only WFCEs (B), CBCE (C), and NCE (D). 
+        Each point represents the daily average (on that day) from 2018 to 2024. The grey boxes highlight days 151 to 253.
+      </figcaption>
+    </figure>
+  </div>
+  
+</section>
 
           <!-- CV -->
           <section id="cv" class="section" style="display:none;">
             <h2>Curriculum Vitae</h2>
-            <p class="muted">Preview of my CV — download or open in a new tab to see the full document.</p>
+            <p class="muted">Last Updated December of 2025. Please email me directly for a copy.</p>
             <div class="cv-embed" style="margin-top:12px;">
-              <!-- Replace with your exact CV filename if different -->
               <iframe src="CV_Lee_Pamela_4Dec2025.pdf" style="width:100%;height:100%;border:0" title="CV (PDF)"></iframe>
             </div>
           </section>
@@ -171,7 +223,6 @@
           <!-- Publications -->
           <section id="publications" class="section" style="display:none;">
             <h2>Publications, Conferences & Talks</h2>
-            <p class="muted">Selected work and presentations.</p>
 
             <ul class="pub" style="margin-top:10px;">
               <li class="pub">
@@ -181,13 +232,13 @@
               </li>
 
               <li class="pub">
-                National Academies — Workshop event page:
-                <a href="https://www.nationalacademies.org/projects/GULF-GEPS-23-P-583/event/45147" target="_blank" rel="noopener">GULF-GEPS event</a>
+                National Academies — Understanding Gulf Ocean Systems:
+                <a href="https://www.nationalacademies.org/projects/GULF-GEPS-23-P-583/event/45147" target="_blank" rel="noopener">Grants Seminar Series: May 2025</a>
               </li>
 
               <li class="pub">
                 AGU 2025 iPoster:
-                <a href="https://agu25.ipostersessions.com/?s=DB-BB-D7-4D-76-70-FA-DC-87-15-06-57-86-A1-64-45" target="_blank" rel="noopener">iPoster presentation</a>
+                <a href="https://agu25.ipostersessions.com/?s=DB-BB-D7-4D-76-70-FA-DC-87-15-06-57-86-A1-64-45" target="_blank" rel="noopener">Loop Current Frontal Eddies (LCFEs) and their Influence on Chlorophyll-a in the Gulf of Mexico</a>
               </li>
             </ul>
           </section>
