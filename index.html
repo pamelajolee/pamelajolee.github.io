@@ -51,12 +51,24 @@
   .tab{ padding:10px 14px; border-radius:10px; background:transparent; color:var(--muted); cursor:pointer; border:1px solid rgba(255,255,255,0.02); }
   .tab.active{ color:#042022; background:var(--accent); font-weight:600; }
   .grid{ display:grid; grid-template-columns:1fr 360px; gap:24px; align-items:start; margin-top:18px; }
-  @media (max-width:1000px){ 
-    .grid{ grid-template-columns:1fr } 
-    /* ensure main content (tabs) appears BEFORE the sidebar on small screens */
-    main{ order: 1; }
-    .sidebar{ order: 2; }
+  @media (max-width:680px){
+  .about-top{
+  /* keep row layout so headshot stays left of text */
+  flex-direction:row;
+  align-items:flex-start;
+  text-align:left;
+  gap:12px;
   }
+  .about-img{
+  width:140px;
+  height:140px;
+  flex-shrink:0;
+  }
+  .lead{ max-width:calc(100% - 160px); } /* leave room beside image */
+  .tabs{ justify-content:flex-start; gap:6px; }
+  .tab{ padding:8px 10px; font-size:14px; }
+  .cv-embed{ height:520px; } /* smaller for phones */
+  .container{ padding:14px; margin:14px auto; }
 
   /* content */
   h2{ margin:0 0 8px 0; font-size:20px; }
@@ -201,7 +213,7 @@
     </p>
 
     <figure style="margin-top:8px;">
-      <img src="Fig7_LCFE_chlor_vs_doy.tiff" alt="Figure 3.5 from thesis — scatter plots of chlorophyll vs day of year" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+      <img src="figure3_5.png" alt="Figure 3.5 from thesis — scatter plots of chlorophyll vs day of year" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
       <figcaption class="muted" style="font-size:13px; margin-top:6px;">
         Figure. Scatter plots for chlorophyll vs. the day of the year, for the mean of all LCFEs (A), only WFCEs (B), CBCE (C), and NCE (D). 
         Each point represents the daily average (on that day) from 2018 to 2024. The grey boxes highlight days 151 to 253.
